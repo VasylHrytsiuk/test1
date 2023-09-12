@@ -50,7 +50,7 @@ resource "aws_db_instance" "my_db_instance" {
   skip_final_snapshot  = true
   publicly_accessible  = false
   vpc_security_group_ids = [module.security_group.security_group_id]
-
+  db_subnet_group_name = aws_db_subnet_group.default.id
   tags = {
     Name = "my_db_instance"
   }
